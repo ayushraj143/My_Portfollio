@@ -3,6 +3,22 @@ import profile from "../assets/profile.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 
+const speakAboutMe = () => {
+  const text = `
+    Hi, I am Ayush Raj.
+    I am a Computer Science student and Full Stack Developer.
+    I am passionate about Web Development, Cloud Computing, and AWS.
+    I enjoy building modern and scalable web applications.
+  `;
+
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.rate = 1;
+  speech.pitch = 1;
+  speech.volume = 1;
+
+  window.speechSynthesis.speak(speech);
+};
+
 function Hero() {
   return (
     <section className="hero">
@@ -81,18 +97,3 @@ function Hero() {
 }
 
 export default Hero;
-const speakAboutMe = () => {
-  const text = `
-    Hi, I am Ayush Raj.
-    I am a Computer Science student and Full Stack Developer.
-    I am passionate about Web Development, Cloud Computing, and AWS.
-    I enjoy building modern and scalable web applications.
-  `;
-
-  const speech = new SpeechSynthesisUtterance(text);
-  speech.rate = 1;
-  speech.pitch = 1;
-  speech.volume = 1;
-
-  window.speechSynthesis.speak(speech);
-};
